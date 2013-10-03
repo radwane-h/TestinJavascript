@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Member";
+}
+<script src="@Url.Content("Scripts/require.js")"></script>
+<script type="text/javascript" src="/Scripts/main.js"></script>
+<script type="text/javascript">
+    require(["MemberViewModel", "knockout", "jQuery"], function (memberViewModel, ko, $) {
+        console.log(memberViewModel);
+        $(document).ready(function () {
+            ko.applyBindings(new memberViewModel(), document.getElementById('memberNode'));
+        });
+    });
+</script>
+<html>
+<body>
+    <div id ="memberNode">
+        <h2>Member</h2>
+        <span data-bind="text: firstName" ></span>
+        <span data-bind="text: lastName" ></span>
+    </div>
+
+</body>
+
+</html>
+
+
